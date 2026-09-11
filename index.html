@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatma Ahmed Tamer | Data Automation & Scraping Specialist</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+            --border: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 10%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); z-index: 100; }
+        nav .logo { font-size: 1.25rem; font-weight: 700; color: var(--text-main); }
+        nav a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; transition: 0.3s; }
+        nav a:hover { color: var(--accent); }
+        .hero { padding: 5rem 10%; text-align: center; max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: 2.75rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; }
+        .btn { display: inline-block; background: var(--accent); color: #0f172a; padding: 0.8rem 1.75rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: 0.3s; margin: 0.5rem; }
+        .btn:hover { background: var(--accent-hover); color: white; }
+        .btn-outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+        .btn-outline:hover { background: var(--accent); color: #0f172a; }
+        section { padding: 4rem 10%; max-width: 1100px; margin: 0 auto; }
+        .section-title { font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card { background: var(--card-bg); padding: 1.75rem; border-radius: 8px; border: 1px solid var(--border); }
+        .card h3 { color: var(--accent); margin-bottom: 0.75rem; }
+        .badge { display: inline-block; background: #334155; color: #38bdf8; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin: 0.2rem; }
+        .cta-box { background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid var(--accent); padding: 3rem; border-radius: 12px; text-align: center; }
+        footer { text-align: center; padding: 2rem; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 4rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Fatma Ahmed Tamer</div>
+        <div>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Data Automation & Web Extraction Specialist</h1>
+        <p>I build custom automated Python pipelines to pull, clean, and structure dynamic web data into business-ready Excel and SQL assets.</p>
+        <a href="#projects" class="btn">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Claim Free 50-Row Sample</a>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <p><strong>Ever calculated how many productive hours your team burns manually copying data from websites and fixing messy spreadsheets?</strong></p>
+            <br>
+            <p>I am Fatma Ahmed, an engineering graduate specializing in Data Systems and Automation through the Digital Egypt Pioneers Initiative (DEPI). My engineering foundation drives me to approach data through structured architecture: where others see unorganized web pages, I see reliable pipelines.</p>
+            <br>
+            <p><strong>My Unique Selling Proposition (USP):</strong> I don't just extract raw data. I build end-to-end data cleaning pipelines with automated validation, deduplication, and direct SQL/Excel output—giving you clean, actionable datasets with zero manual rework required.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Offered Services</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Automated Web Scraping</h3>
+                <p>Custom crawlers that extract product catalogs, competitor pricing, and market directories directly into clean Excel/CSV formats, handling dynamic pagination and JavaScript.</p>
+            </div>
+            <div class="card">
+                <h3>Data Cleansing & Structuring</h3>
+                <p>Transforming disorganized datasets into standardized schemas by stripping duplicates, fixing missing values, and formatting mixed records using Python.</p>
+            </div>
+            <div class="card">
+                <h3>Database Design & SQL Reporting</h3>
+                <p>Designing normalized SQL Server databases with primary/foreign key constraints and developing queries to deliver on-demand reporting.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Skills & What I Build With Them</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Extraction & Automation</h3>
+                <p><strong>Python, BeautifulSoup, Selenium:</strong> Developing automated bots to handle dynamic pages, bypass pagination, and parse structured HTML elements reliably.</p>
+            </div>
+            <div class="card">
+                <h3>Data Processing</h3>
+                <p><strong>Pandas & NumPy:</strong> Data wrangling, schema transformation, deduplication, and mathematical aggregations on large datasets.</p>
+            </div>
+            <div class="card">
+                <h3>Storage & Querying</h3>
+                <p><strong>SQL (SSMS) & Advanced Excel:</strong> Writing relational DDL/DML queries, setting database integrity constraints, and generating automated spreadsheet reports.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Multi-Page Job Intelligence Scraper</h3>
+                <p>Automated crawler built to parse multi-page dynamic job listings, extracting structured columns across categories.</p>
+                <div style="margin: 1rem 0;">
+                    <span class="badge">Python</span><span class="badge">Selenium</span><span class="badge">BeautifulSoup</span><span class="badge">Pandas</span>
+                </div>
+                <p><strong>Result:</strong> Extracted 1,000+ validated records in minutes, reducing manual research time by over 85%.</p>
+            </div>
+            <div class="card">
+                <h3>Sports League Performance ETL</h3>
+                <p>Scheduled data extraction pipeline collecting live tournament stats and generating structured performance tables.</p>
+                <div style="margin: 1rem 0;">
+                    <span class="badge">Python</span><span class="badge">Requests</span><span class="badge">Pandas</span><span class="badge">Excel</span>
+                </div>
+                <p><strong>Result:</strong> Transformed disparate match records into 100% clean, analysis-ready datasets with zero missing values.</p>
+            </div>
+            <div class="card">
+                <h3>Relational Database Architecture</h3>
+                <p>Normalized relational schema design with integrity constraints, optimized indexing, and reporting queries.</p>
+                <div style="margin: 1rem 0;">
+                    <span class="badge">SQL Server</span><span class="badge">SSMS</span><span class="badge">DDL</span>
+                </div>
+                <p><strong>Result:</strong> Ensured zero orphaned records and achieved fast query responses across relational tables.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="cta-box">
+            <h2>Stop Wasting Hours on Manual Data Collection</h2>
+            <br>
+            <p>Send me your target website link or your messiest spreadsheet, and I will deliver a <strong>Free 50-Row Sample Dataset</strong> within 24 hours—fully cleaned, formatted, and structured.</p>
+            <br>
+            <p><strong>Email:</strong> your.email@example.com</p>
+            <p><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</p>
+            <p><strong>GitHub:</strong> github.com/yourusername</p>
+            <br>
+            <a href="mailto:your.email@example.com" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Fatma Ahmed Tamer. Built for client-focused performance.</p>
+    </footer>
+
+</body>
+</html>
