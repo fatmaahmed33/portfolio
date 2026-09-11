@@ -3,218 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatma Ahmed Tamer | Data Extraction & Automation Specialist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Fatma Ahmed | Data Automation Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #ffffff;
-            --text-dark: #111827;
-            --text-muted: #4b5563;
-            --border: #e5e7eb;
-            --accent: #2563eb;
-            --card-bg: #f9fafb;
+            --bg-main: #fcfcfd;
+            --bg-card: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --accent: #0f172a;
+            --highlight: #2563eb;
+            --tag-bg: #f1f5f9;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
-        body { background-color: var(--bg); color: var(--text-dark); line-height: 1.65; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+        body { background-color: var(--bg-main); color: var(--text-dark); line-height: 1.7; scroll-behavior: smooth; }
         
         /* Navigation */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 8%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); z-index: 100; }
-        nav .logo { font-size: 1.1rem; font-weight: 700; color: var(--text-dark); letter-spacing: -0.5px; }
-        nav .links a { color: var(--text-muted); text-decoration: none; margin-left: 1.8rem; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
-        nav .links a:hover { color: var(--text-dark); }
-        
-        /* Hero Section */
-        .hero-container { padding: 5rem 8% 4rem; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
-        .hero-text { flex: 1; }
-        .hero-text span { font-size: 1.1rem; color: var(--text-muted); display: block; margin-bottom: 0.8rem; }
-        .hero-text h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.25; color: var(--text-dark); letter-spacing: -1px; margin-bottom: 1.5rem; }
-        .hero-text p { font-size: 1.1rem; color: var(--text-muted); max-width: 580px; margin-bottom: 2rem; }
-        .btn-outline { display: inline-block; padding: 0.8rem 1.8rem; border: 1.5px solid var(--text-dark); color: var(--text-dark); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; letter-spacing: 0.5px; text-transform: uppercase; }
-        .btn-outline:hover { background: var(--text-dark); color: #fff; }
-        .hero-avatar { width: 280px; height: 280px; border-radius: 50%; background: #f3f4f6; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
-        
-        /* Content Sections */
-        section { padding: 4.5rem 8%; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); }
-        .section-header { font-size: 1.8rem; font-weight: 700; margin-bottom: 2.5rem; letter-spacing: -0.5px; }
-        
-        /* Grid Cards */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-        .card { background: var(--card-bg); border: 1px solid var(--border); padding: 2rem; border-radius: 6px; transition: transform 0.2s, box-shadow 0.2s; }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.03); }
-        .card h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.8rem; color: var(--text-dark); }
-        .card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem; }
-        .badge { display: inline-block; background: #e5e7eb; color: #374151; padding: 0.2rem 0.6rem; font-size: 0.75rem; font-weight: 600; border-radius: 3px; margin-right: 0.4rem; margin-bottom: 0.4rem; }
-        
-        /* Project Links */
-        .project-links { margin-top: 1.2rem; display: flex; gap: 1rem; }
-        .project-links a { color: var(--accent); font-weight: 600; font-size: 0.85rem; text-decoration: none; }
-        .project-links a:hover { text-decoration: underline; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 8%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(252, 252, 253, 0.95); backdrop-filter: blur(8px); z-index: 100; }
+        nav .logo { font-size: 1.15rem; font-weight: 700; color: var(--accent); }
+        nav .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s; }
+        nav .nav-links a:hover { color: var(--highlight); }
 
-        /* Contact Box */
-        .cta-container { background: #fafafa; border: 1px solid var(--border); padding: 3.5rem; text-align: center; border-radius: 8px; }
-        .cta-container h2 { font-size: 2rem; margin-bottom: 1rem; }
-        .cta-container p { color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem; }
+        /* Sections */
+        section { padding: 4.5rem 8%; max-width: 1150px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+        .section-header { font-size: 1.85rem; font-weight: 700; margin-bottom: 2rem; color: var(--accent); }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         
-        footer { text-align: center; padding: 2.5rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; }
+        /* Cards */
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+        .card h3 { font-size: 1.2rem; font-weight: 600; color: var(--accent); margin-bottom: 0.75rem; }
+        .card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem; }
+        .badge { display: inline-block; background: var(--tag-bg); color: var(--accent); padding: 0.25rem 0.65rem; font-size: 0.75rem; font-weight: 600; border-radius: 4px; margin: 0.2rem 0.3rem 0.2rem 0; }
+        
+        /* 1. Cover / Hero */
+        .hero { display: flex; align-items: center; justify-content: space-between; gap: 3rem; padding: 5rem 8% 4.5rem; max-width: 1150px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+        .hero-content { flex: 1.2; }
+        .hero-content .subtitle { font-size: 0.95rem; font-weight: 700; color: var(--highlight); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 0.75rem; }
+        .hero-content h1 { font-size: 2.75rem; font-weight: 800; line-height: 1.2; color: var(--accent); margin-bottom: 1rem; }
+        .hero-content .job-title { font-size: 1.25rem; font-weight: 500; color: var(--text-muted); margin-bottom: 1.5rem; }
+        .hero-image-wrapper { flex: 0.8; display: flex; justify-content: center; }
+        .hero-image { width: 280px; height: 350px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        
+        /* Buttons */
+        .btn { display: inline-block; padding: 0.75rem 1.6rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.2s; }
+        .btn-primary { background: var(--accent); color: #ffffff; border: 1px solid var(--accent); }
+        .btn-primary:hover { background: #334155; }
+        .btn-outline { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); margin-left: 0.5rem; }
+        .btn-outline:hover { background: var(--accent); color: #ffffff; }
+        
+        /* Project Screenshots */
+        .project-preview { width: 100%; height: 180px; background-color: #0f172a; border-radius: 6px; border: 1px solid var(--border); margin-bottom: 1.25rem; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .project-preview img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Call to Action */
+        .cta-box { background: var(--accent); color: #ffffff; border-radius: 10px; padding: 3.5rem 2rem; text-align: center; }
+        .cta-box h2 { font-size: 2.1rem; font-weight: 700; margin-bottom: 1rem; color: #ffffff; }
+        .cta-box p { color: #94a3b8; max-width: 620px; margin: 0 auto 2rem; font-size: 1.05rem; }
+        .cta-box .btn-white { background: #ffffff; color: var(--accent); }
+        .cta-box .btn-white:hover { background: #f1f5f9; }
+        
+        /* Thank You Footer */
+        footer { padding: 4rem 8% 3rem; text-align: center; background: var(--bg-main); color: var(--text-muted); }
+        .thank-you-title { font-size: 1.5rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
         
         @media (max-width: 850px) {
-            .hero-container { flex-direction: column-reverse; text-align: center; }
-            .hero-text p { margin: 0 auto 2rem; }
-            .hero-avatar { width: 200px; height: 200px; }
-            nav .links { display: none; }
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .hero-image { width: 220px; height: 280px; }
+            nav .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav>
-        <div class="logo">Fatma Ahmed Tamer</div>
-        <div class="links">
+        <div class="logo">Fatma Ahmed</div>
+        <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Work</a>
+            <a href="#education">Education</a>
             <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <div class="hero-container">
-        <div class="hero-text">
-            <span>Hi, my name is Fatma Ahmed</span>
-            <h1>I'm a data extraction and automation specialist turning web feeds into clean business assets.</h1>
-            <p>I engineer automated Python pipelines to pull, validate, and structure dynamic web data—delivering error-free datasets and professional documentation ready for immediate operational use.</p>
-            <a href="#projects" class="btn-outline">View My Work</a>
+    <!-- 1. Cover Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <span class="subtitle">Freelance Portfolio</span>
+            <h1>Fatma Ahmed</h1>
+            <div class="job-title">Data Automation & Web Extraction Specialist | AI & Data Science</div>
+            <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem;">
+                Transforming unstructured web pages into clean, validated, and automated operational pipelines for businesses and market researchers.
+            </p>
+            <a href="#projects" class="btn btn-primary">View Featured Projects</a>
+            <a href="#contact" class="btn btn-outline">Claim Free 50-Row Sample</a>
         </div>
-        <div class="hero-avatar">
-            <!-- ضع رابط صورتك الشخصية هنا بدلاً من الصورة الافتراضية -->
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Fatma Ahmed Tamer">
+        <div class="hero-image-wrapper">
+            <img class="hero-image" src="profile.jpg" alt="Fatma Ahmed" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600'">
         </div>
     </div>
 
-    <!-- About Section -->
+    <!-- 2. About Me (Brand Story + 7 Elements) -->
     <section id="about">
-        <h2 class="section-header">About Me</h2>
-        <div style="max-width: 800px;">
-            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.2rem;">
-                <strong>Ever calculated how many productive hours your team burns manually copying data from websites and formatting mixed spreadsheets?</strong>
+        <h2 class="section-header">About Me (My Journey & Story)</h2>
+        <div class="card" style="line-height: 1.85;">
+            <p style="font-size: 1.15rem; font-weight: 600; color: var(--accent); margin-bottom: 1.25rem;">
+                Ever calculated how many productive business hours are lost manually copy-pasting tables, fixing broken Excel sheets, and chasing incomplete online records?
             </p>
-            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">
-                I hold a specialized engineering foundation in Data Systems and AI through the Digital Egypt Pioneers Initiative (DEPI). I look at data through structural architecture: where others see unorganized web catalogs, I build automated pipelines that extract, cleanse, and structure every cell reliably.
+            
+            <p style="margin-bottom: 1.25rem;">
+                My name is <strong>Fatma Ahmed</strong>. My journey didn’t start inside a routine administrative office; it began in the laboratories of <strong>Communications and Electronics Engineering</strong>. In engineering, you are trained to look at the world through signals, systems, and hardware architectures—where any broken connection produces noise. When I saw businesses struggling with messy web data, I realized the exact same principle applies: raw online information is full of noise, and it takes deliberate engineering to turn it into clean signal.
             </p>
-            <p style="color: var(--text-muted);">
-                <strong>Why work with me?</strong> I deliver zero-rework datasets. Every pipeline guarantees deduplication, format normalization, and strict schema validation directly into ready-to-use Excel or SQL databases.
+
+            <p style="margin-bottom: 1.25rem;">
+                To bridge this gap, I dove deep into Data Science and Artificial Intelligence through the <strong>Digital Egypt Pioneers Initiative (DEPI)</strong>. I combined engineering logic with advanced Python scripting, dynamic browser automation (Selenium & BeautifulSoup), and relational database modeling (SQL Server). This technical synthesis allows me to automate complex data workflows that standard data entry clerks simply cannot execute.
             </p>
+
+            <div style="background: var(--tag-bg); padding: 1.25rem; border-left: 4px solid var(--highlight); border-radius: 4px; margin-bottom: 1.5rem;">
+                <strong style="color: var(--accent); display: block; margin-bottom: 0.4rem;">My Unique Selling Proposition (USP):</strong>
+                I don’t just scrape or type data—<strong>I deliver zero-rework datasets</strong>. Every deliverable passes through automated deduplication, schema validation, and constraint checking directly into your SQL databases or standardized Excel sheets. You receive clean, decision-ready data without spending a single minute on manual cleanup.
+            </div>
+
+            <p style="margin-bottom: 1.5rem;">
+                Beyond technical pipelines, I bring a personal commitment to transparent communication, strict confidentiality (NDA-friendly), and meticulous delivery. If you are looking to replace tedious manual workflows with dependable automation, explore my work below or let’s connect directly.
+            </p>
+            
+            <a href="#contact" class="btn btn-primary" style="font-size: 0.85rem;">Let's Discuss Your Project &rarr;</a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
-        <h2 class="section-header">Offered Services</h2>
-        <div class="grid">
+    <!-- 3. Education Section -->
+    <section id="education">
+        <h2 class="section-header">Education & Specialization</h2>
+        <div class="grid-2">
             <div class="card">
-                <h3>Automated Web Scraping</h3>
-                <p>Custom crawlers built to extract product pricing, job postings, directory listings, or sports stats across dynamic, multi-page platforms directly into Excel/CSV.</p>
-                <span class="badge">Python</span><span class="badge">Selenium</span><span class="badge">BeautifulSoup</span>
+                <span class="badge">Undergraduate Degree</span>
+                <h3>B.Sc. in Communications and Electronics Engineering</h3>
+                <p style="font-weight: 600; color: var(--highlight);">Higher Institute of Engineering and Technology, New Cairo Academy (Fifth Settlement)</p>
+                <p>Currently in my <strong>Final Graduation Year</strong>. Developing core problem-solving competencies, system design logic, and advanced mathematical foundations directly applied to algorithmic thinking.</p>
             </div>
             <div class="card">
-                <h3>Automated Data Entry & Cleaning</h3>
-                <p>Replacing manual data typing by writing transformation scripts that clean mixed text, strip duplicate records, and standardize messy spreadsheets.</p>
-                <span class="badge">Pandas</span><span class="badge">Data Wrangling</span><span class="badge">Excel</span>
-            </div>
-            <div class="card">
-                <h3>Database Schema & SQL Queries</h3>
-                <p>Designing relational SQL Server tables with strict data integrity rules, views, and custom query reporting tailored to operational decisions.</p>
-                <span class="badge">SQL Server</span><span class="badge">SSMS</span><span class="badge">DDL</span>
-            </div>
-            <div class="card">
-                <h3>LinkedIn & Technical CV Optimization</h3>
-                <p>Refining professional profiles and crafting ATS-compliant technical resumes structured to highlight engineering and data competencies effectively.</p>
-                <span class="badge">ATS Formatting</span><span class="badge">Career Strategy</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2 class="section-header">Featured Work & Case Studies</h2>
-        <div class="grid">
-            <!-- Project 1: Wuzzuf -->
-            <div class="card">
-                <h3>Wuzzuf Dynamic Job Market Scraper</h3>
-                <p>Automated crawler parsing multi-page dynamic job listings, capturing titles, companies, locations, and experience requirements across industry sectors.</p>
-                <p><strong>Result:</strong> Extracted 1,000+ structured job records in minutes, eliminating manual search time by 85%.</p>
-                <div style="margin-bottom: 0.8rem;">
-                    <span class="badge">Selenium</span><span class="badge">Pandas</span><span class="badge">Excel Export</span>
-                </div>
-                <div class="project-links">
-                    <a href="#" target="_blank">View GitHub Code &rarr;</a>
-                    <a href="#" target="_blank">Download Sample Excel &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Project 2: Yallakora -->
-            <div class="card">
-                <h3>Yallakora Sports Performance Pipeline</h3>
-                <p>Real-time ETL scraper extracting match results, championship details, and team standings, standardizing Arabic text strings and date formats.</p>
-                <p><strong>Result:</strong> Converted live sports data feeds into 100% clean, standardized analytics spreadsheets.</p>
-                <div style="margin-bottom: 0.8rem;">
-                    <span class="badge">Requests</span><span class="badge">BeautifulSoup</span><span class="badge">Data Cleansing</span>
-                </div>
-                <div class="project-links">
-                    <a href="#" target="_blank">View GitHub Code &rarr;</a>
-                    <a href="#" target="_blank">View Cleaned Output &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Project 3: Relational DB -->
-            <div class="card">
-                <h3>Enterprise Relational Database Design</h3>
-                <p>Designed and deployed an inventory relational database schema enforcing foreign-key integrity constraints and sub-second query performance.</p>
-                <p><strong>Result:</strong> Guaranteed zero orphaned records and enabled instant multi-table reporting.</p>
-                <div style="margin-bottom: 0.8rem;">
-                    <span class="badge">SQL Server</span><span class="badge">SSMS</span><span class="badge">DDL</span>
-                </div>
-                <div class="project-links">
-                    <a href="#" target="_blank">View Database Scripts &rarr;</a>
-                </div>
+                <span class="badge">Specialized Scholarship</span>
+                <h3>AI & Data Science Professional Track</h3>
+                <p style="font-weight: 600; color: var(--highlight);">Digital Egypt Pioneers Initiative (DEPI) — MCIT</p>
+                <p>Intensive specialized training covering end-to-end data pipelines, exploratory data analysis, machine learning foundations, automated data extraction, and relational database management.</p>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- 4. Skills Section (Technical + Tools + Soft + Languages) -->
     <section id="skills">
-        <h2 class="section-header">Technical Toolkit</h2>
-        <div class="grid">
+        <h2 class="section-header">Skills & Competencies</h2>
+        <div class="grid-2">
             <div class="card">
-                <h3>Extraction & Automation</h3>
-                <p><strong>Python, BeautifulSoup, Selenium:</strong> Automating browser actions, managing infinite scrolling, and extracting deeply nested elements.</p>
+                <h3>1. Technical Skills (What I Do With Each)</h3>
+                <ul style="padding-left: 1.2rem; color: var(--text-muted); font-size: 0.95rem;">
+                    <li style="margin-bottom: 0.75rem;"><strong>Automated Web Scraping:</strong> Writing bot scripts using Selenium and BeautifulSoup to bypass dynamic rendering, anti-automation flags, and pagination to extract structured data.</li>
+                    <li style="margin-bottom: 0.75rem;"><strong>Data Cleansing & Transformation:</strong> Cleaning missing values, converting datatypes, and restructuring nested HTML records into organized Pandas DataFrames.</li>
+                    <li style="margin-bottom: 0.75rem;"><strong>Relational Schema Design (DDL):</strong> Building normalized databases from scratch with PRIMARY/FOREIGN keys, CHECK constraints, and default values.</li>
+                    <li style="margin-bottom: 0.75rem;"><strong>SQL Optimization & Joins:</strong> Writing clean T-SQL queries to alter schemas, manipulate records, and extract business-ready reports.</li>
+                    <li><strong>Automated Data Entry:</strong> Ingesting web data directly into normalized tables and Excel files to eliminate manual typing mistakes.</li>
+                </ul>
             </div>
+
             <div class="card">
-                <h3>Data Processing & Cleaning</h3>
-                <p><strong>Pandas, NumPy, Advanced Excel:</strong> Eliminating corrupted entries, standardizing schema formats, and performing aggregations.</p>
+                <h3>2. Tools & Technologies</h3>
+                <div style="margin-top: 1rem;">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--accent);">Programming Languages:</p>
+                    <span class="badge">Python</span><span class="badge">SQL (T-SQL)</span>
+                    
+                    <p style="font-weight: 600; margin: 1rem 0 0.5rem; color: var(--accent);">Scraping & Automation:</p>
+                    <span class="badge">Selenium WebDriver</span><span class="badge">BeautifulSoup</span><span class="badge">Requests</span>
+                    
+                    <p style="font-weight: 600; margin: 1rem 0 0.5rem; color: var(--accent);">Data Processing & Storage:</p>
+                    <span class="badge">Pandas</span><span class="badge">NumPy</span><span class="badge">SQL Server (SSMS)</span><span class="badge">Excel</span>
+                    
+                    <p style="font-weight: 600; margin: 1rem 0 0.5rem; color: var(--accent);">Development & Versioning:</p>
+                    <span class="badge">VS Code</span><span class="badge">Git & GitHub</span><span class="badge">Jupyter Notebook</span>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Storage & Management</h3>
-                <p><strong>Microsoft SQL Server (SSMS), Git/GitHub:</strong> Designing relational structures and maintaining version-controlled automation scripts.</p>
+                <h3>3. Soft Skills (Client-Centered)</h3>
+                <ul style="padding-left: 1.2rem; color: var(--text-muted); font-size: 0.95rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Systematic Diagnostic Thinking:</strong> Catching broken selectors and dirty formatting before running large automated pipelines.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Clear Technical Communication:</strong> Explaining data constraints and deliverable structures simply.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Commitment to Deadlines:</strong> Meeting project timelines without sacrificing output quality.</li>
+                    <li><strong>Data Privacy (NDA-Friendly):</strong> Full adherence to project confidentiality and client data security.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>4. Languages</h3>
+                <div style="margin-top: 1rem;">
+                    <p style="margin-bottom: 0.75rem;"><strong>Arabic:</strong> Native (Mother Tongue)</p>
+                    <p><strong>English:</strong> Professional Working Proficiency (Technical Documentation & Clear Communication)</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="cta-container">
-            <h2>Let’s Automate Your Data Workflows</h2>
-            <p>Send me your target website or unorganized spreadsheet, and I will deliver a <strong>Free 50-Row Sample Dataset</strong> within 24 hours—completely formatted and cleaned to your requirements.</p>
-            <p style="font-weight: 600; color: var(--text-dark); margin-bottom: 1.5rem;">
-                Email: <a href="mailto:your.email@example.com" style="color: var(--accent); text-decoration: none;">your.email@example.com</a>
+    <!-- 5. Work Experience -->
+    <section id="experience">
+        <h2 class="section-header">Work Experience</h2>
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                <h3 style="margin-bottom: 0;">Freelance Data Extraction & Automation Specialist</h3>
+                <span class="badge" style="background: #e0f2fe; color: #0284c7;">Self-Employed / Remote</span>
+            </div>
+            <p style="color: var(--highlight); font-weight: 600; margin-bottom: 1rem;">Independent Practice | 2026 – Present</p>
+            <ul style="padding-left: 1.2rem; color: var(--text-muted); font-size: 0.95rem;">
+                <li style="margin-bottom: 0.5rem;">Designed robust Python scrapers with automated pagination handling and anti-bot mitigation to collect live market data.</li>
+                <li style="margin-bottom: 0.5rem;">Converted unstructured web listings into clean Pandas DataFrames and exported analysis-ready CSV/Excel files.</li>
+                <li style="margin-bottom: 0.5rem;">Architected normalized relational database schemas in Microsoft SQL Server with strict validation rules and constraints.</li>
+                <li>Conducted technical profile and ATS-compliant CV restructuring for tech professionals and engineering graduates.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 6. Offered Services -->
+    <section id="services">
+        <h2 class="section-header">Offered Services (Problems I Solve for You)</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>1. Automated Web Scraping & Lead Extraction</h3>
+                <p>Custom Python crawlers to extract product prices, directory listings, or employment opportunities from complex websites into clean Excel/CSV files.</p>
+                <strong style="color: var(--accent); font-size: 0.85rem;">Client Benefit:</strong> Saves hundreds of hours of manual browsing and provides structured business data on demand.
+            </div>
+
+            <div class="card">
+                <h3>2. Automated Data Cleaning & Spreadsheet Structuring</h3>
+                <p>Fixing disordered, dirty, or corrupted spreadsheets by removing duplicate rows, unifying naming conventions, and filling missing values automatically.</p>
+                <strong style="color: var(--accent); font-size: 0.85rem;">Client Benefit:</strong> Ensures error-free records ready for CRMs, data modeling, or analytical dashboards.
+            </div>
+
+            <div class="card">
+                <h3>3. Relational Database Design & Custom SQL Querying</h3>
+                <p>Designing scalable relational tables in SQL Server with referential constraints, optimized indexes, and tailored queries for periodic business reporting.</p>
+                <strong style="color: var(--accent); font-size: 0.85rem;">Client Benefit:</strong> Eliminates data corruption and delivers fast, multi-table insights.
+            </div>
+
+            <div class="card">
+                <h3>4. LinkedIn & Technical CV Optimization</h3>
+                <p>Crafting ATS-friendly resumes and optimizing LinkedIn profiles for engineers and tech professionals to maximize recruiter visibility and outreach.</p>
+                <strong style="color: var(--accent); font-size: 0.85rem;">Client Benefit:</strong> Highlights core technical strengths clearly to increase job and freelance interview rates.
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Previous Work / Projects -->
+    <section id="projects">
+        <h2 class="section-header">Featured Projects & Live Evidence</h2>
+        <div class="grid-3">
+            
+            <!-- Project 1: Wuzzuf Scraper -->
+            <div class="card">
+                <div class="project-preview">
+                    <img src="wuzzuf_code.png" alt="Wuzzuf Scraper Code Screenshot" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=500'">
+                </div>
+                <h3>Wuzzuf Job Market Intelligence Scraper</h3>
+                <p><strong>Tools:</strong> Python, Selenium WebDriver, BeautifulSoup, Pandas</p>
+                <p><strong>Execution:</strong> Built a dynamic web crawler bypassing bot-detection parameters. Parsed position titles, company names, employment types, and work arrangements into a structured Pandas DataFrame.</p>
+                <p style="color: var(--highlight); font-weight: 600;"><strong>The Result:</strong> Replaced manual search routines with automated data extraction ready for recruitment analysis.</p>
+                <div style="margin-top: 1rem;">
+                    <a href="https://github.com/fatmaahmed33" target="_blank" style="color: var(--highlight); text-decoration: none; font-weight: 600; font-size: 0.85rem;">View Code on GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Project 2: Yallakora ETL -->
+            <div class="card">
+                <div class="project-preview">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=500" alt="Yallakora Sports Data Pipeline">
+                </div>
+                <h3>Yallakora Sports Analytics Pipeline</h3>
+                <p><strong>Tools:</strong> Python, Requests, BeautifulSoup, Pandas, Excel</p>
+                <p><strong>Execution:</strong> Designed an automated ETL routine capturing real-time tournament standings and match outcomes, standardizing Arabic text formats and dates into clean tables.</p>
+                <p style="color: var(--highlight); font-weight: 600;"><strong>The Result:</strong> Delivered clean, duplicate-free sports datasets ready for analytics and dashboards.</p>
+                <div style="margin-top: 1rem;">
+                    <a href="https://github.com/fatmaahmed33" target="_blank" style="color: var(--highlight); text-decoration: none; font-weight: 600; font-size: 0.85rem;">View Code on GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Project 3: Relational DB Schema -->
+            <div class="card">
+                <div class="project-preview">
+                    <img src="sql_project.png" alt="SQL Server Schema Screenshot" onerror="this.src='https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&q=80&w=500'">
+                </div>
+                <h3>Relational Database Architecture (LibraryDB)</h3>
+                <p><strong>Tools:</strong> Microsoft SQL Server, SSMS, T-SQL, DDL</p>
+                <p><strong>Execution:</strong> Built a relational schema (`Categories` & `Books`) enforcing PRIMARY/FOREIGN KEY relationships, CHECK constraints on pricing, and customized ALTER TABLE adjustments.</p>
+                <p style="color: var(--highlight); font-weight: 600;"><strong>The Result:</strong> Prevented orphaned records and achieved zero-redundancy data storage.</p>
+                <div style="margin-top: 1rem;">
+                    <a href="https://github.com/fatmaahmed33" target="_blank" style="color: var(--highlight); text-decoration: none; font-weight: 600; font-size: 0.85rem;">View SQL Scripts &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 8. Achievements & Social Proof -->
+    <section id="achievements">
+        <h2 class="section-header">Achievements & Recognition</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>DEPI AI & Data Science Scholarship Awardee</h3>
+                <p>Selected among top-performing engineering applicants for the government-sponsored <strong>Digital Egypt Pioneers Initiative (DEPI)</strong> under the Ministry of Communications and Information Technology (MCIT).</p>
+            </div>
+            <div class="card">
+                <h3>IEEE Student Branch Active Contributor</h3>
+                <p>Participated in academic and technical engineering workshops at New Cairo Academy, demonstrating teamwork, communication, and peer leadership.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Testimonials Section -->
+    <section id="testimonials">
+        <h2 class="section-header">Peer & Client Testimonials</h2>
+        <div class="grid-2">
+            <div class="card">
+                <p style="font-style: italic; color: var(--text-dark);">
+                    "Fatma automated our web data extraction process seamlessly. Her engineering mindset ensures data arrives clean, structured, and completely free of corrupted columns."
+                </p>
+                <strong style="color: var(--accent); display: block; margin-top: 0.75rem;">— Technical Reviewer / Peer Feedback</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Data Extraction Simulation</span>
+            </div>
+            <div class="card">
+                <p style="font-style: italic; color: var(--text-dark);">
+                    "The SQL database design was thoroughly structured with strong constraint checks. Zero duplicated rows and reliable query outputs."
+                </p>
+                <strong style="color: var(--accent); display: block; margin-top: 0.75rem;">— Academic Project Reviewer</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Database Architecture Assessment</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Call to Action -->
+    <section id="contact" style="border-bottom: none;">
+        <div class="cta-box">
+            <h2>Stop Wasting Hours on Manual Data Collection</h2>
+            <p>
+                Let’s test your project with zero risk. Send me your target website URL or your messiest spreadsheet, and I will deliver a <strong>Free 50-Row Sample Dataset</strong> within 24 hours—cleaned, formatted, and structured to your exact requirements.
             </p>
-            <a href="mailto:your.email@example.com" class="btn-outline">Claim Free Sample Data</a>
+            <div style="margin-bottom: 2rem;">
+                <p style="color: #cbd5e1; font-weight: 500;">
+                    Email: <a href="mailto:fatma.ahmed@example.com" style="color: #38bdf8; text-decoration: none;">fatma.ahmed@example.com</a>
+                </p>
+                <p style="color: #cbd5e1; font-weight: 500;">
+                    GitHub: <a href="https://github.com/fatmaahmed33" target="_blank" style="color: #38bdf8; text-decoration: none;">github.com/fatmaahmed33</a>
+                </p>
+            </div>
+            <a href="mailto:fatma.ahmed@example.com" class="btn btn-white">Claim Your Free Sample Data</a>
         </div>
     </section>
 
+    <!-- 11. Thank You & Footer -->
     <footer>
-        <p>&copy; 2026 Fatma Ahmed Tamer. All rights reserved.</p>
+        <div class="thank-you-title">Thank You for Visiting My Portfolio!</div>
+        <p style="margin-bottom: 1rem;">Looking forward to engineering efficient, automated data pipelines for your business.</p>
+        <p style="font-size: 0.8rem; color: #94a3b8;">&copy; 2026 Fatma Ahmed. Built for performance and client results.</p>
     </footer>
 
 </body>
