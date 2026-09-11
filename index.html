@@ -3,153 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatma Ahmed Tamer | Data Automation & Scraping Specialist</title>
+    <title>Fatma Ahmed Tamer | Data Extraction & Automation Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #0284c7;
-            --border: #334155;
+            --bg: #ffffff;
+            --text-dark: #111827;
+            --text-muted: #4b5563;
+            --border: #e5e7eb;
+            --accent: #2563eb;
+            --card-bg: #f9fafb;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 10%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); z-index: 100; }
-        nav .logo { font-size: 1.25rem; font-weight: 700; color: var(--text-main); }
-        nav a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; transition: 0.3s; }
-        nav a:hover { color: var(--accent); }
-        .hero { padding: 5rem 10%; text-align: center; max-width: 900px; margin: 0 auto; }
-        .hero h1 { font-size: 2.75rem; margin-bottom: 1rem; line-height: 1.2; }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; }
-        .btn { display: inline-block; background: var(--accent); color: #0f172a; padding: 0.8rem 1.75rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: 0.3s; margin: 0.5rem; }
-        .btn:hover { background: var(--accent-hover); color: white; }
-        .btn-outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
-        .btn-outline:hover { background: var(--accent); color: #0f172a; }
-        section { padding: 4rem 10%; max-width: 1100px; margin: 0 auto; }
-        .section-title { font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .card { background: var(--card-bg); padding: 1.75rem; border-radius: 8px; border: 1px solid var(--border); }
-        .card h3 { color: var(--accent); margin-bottom: 0.75rem; }
-        .badge { display: inline-block; background: #334155; color: #38bdf8; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin: 0.2rem; }
-        .cta-box { background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid var(--accent); padding: 3rem; border-radius: 12px; text-align: center; }
-        footer { text-align: center; padding: 2rem; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 4rem; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+        body { background-color: var(--bg); color: var(--text-dark); line-height: 1.65; }
+        
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 8%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); z-index: 100; }
+        nav .logo { font-size: 1.1rem; font-weight: 700; color: var(--text-dark); letter-spacing: -0.5px; }
+        nav .links a { color: var(--text-muted); text-decoration: none; margin-left: 1.8rem; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
+        nav .links a:hover { color: var(--text-dark); }
+        
+        /* Hero Section */
+        .hero-container { padding: 5rem 8% 4rem; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
+        .hero-text { flex: 1; }
+        .hero-text span { font-size: 1.1rem; color: var(--text-muted); display: block; margin-bottom: 0.8rem; }
+        .hero-text h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.25; color: var(--text-dark); letter-spacing: -1px; margin-bottom: 1.5rem; }
+        .hero-text p { font-size: 1.1rem; color: var(--text-muted); max-width: 580px; margin-bottom: 2rem; }
+        .btn-outline { display: inline-block; padding: 0.8rem 1.8rem; border: 1.5px solid var(--text-dark); color: var(--text-dark); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; letter-spacing: 0.5px; text-transform: uppercase; }
+        .btn-outline:hover { background: var(--text-dark); color: #fff; }
+        .hero-avatar { width: 280px; height: 280px; border-radius: 50%; background: #f3f4f6; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Content Sections */
+        section { padding: 4.5rem 8%; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); }
+        .section-header { font-size: 1.8rem; font-weight: 700; margin-bottom: 2.5rem; letter-spacing: -0.5px; }
+        
+        /* Grid Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); padding: 2rem; border-radius: 6px; transition: transform 0.2s, box-shadow 0.2s; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.03); }
+        .card h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.8rem; color: var(--text-dark); }
+        .card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.2rem; }
+        .badge { display: inline-block; background: #e5e7eb; color: #374151; padding: 0.2rem 0.6rem; font-size: 0.75rem; font-weight: 600; border-radius: 3px; margin-right: 0.4rem; margin-bottom: 0.4rem; }
+        
+        /* Project Links */
+        .project-links { margin-top: 1.2rem; display: flex; gap: 1rem; }
+        .project-links a { color: var(--accent); font-weight: 600; font-size: 0.85rem; text-decoration: none; }
+        .project-links a:hover { text-decoration: underline; }
+
+        /* Contact Box */
+        .cta-container { background: #fafafa; border: 1px solid var(--border); padding: 3.5rem; text-align: center; border-radius: 8px; }
+        .cta-container h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .cta-container p { color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem; }
+        
+        footer { text-align: center; padding: 2.5rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem; }
+        
+        @media (max-width: 850px) {
+            .hero-container { flex-direction: column-reverse; text-align: center; }
+            .hero-text p { margin: 0 auto 2rem; }
+            .hero-avatar { width: 200px; height: 200px; }
+            nav .links { display: none; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo">Fatma Ahmed Tamer</div>
-        <div>
+        <div class="links">
             <a href="#about">About</a>
             <a href="#services">Services</a>
+            <a href="#projects">Work</a>
             <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <header class="hero">
-        <h1>Data Automation & Web Extraction Specialist</h1>
-        <p>I build custom automated Python pipelines to pull, clean, and structure dynamic web data into business-ready Excel and SQL assets.</p>
-        <a href="#projects" class="btn">View My Work</a>
-        <a href="#contact" class="btn btn-outline">Claim Free 50-Row Sample</a>
-    </header>
+    <div class="hero-container">
+        <div class="hero-text">
+            <span>Hi, my name is Fatma Ahmed</span>
+            <h1>I'm a data extraction and automation specialist turning web feeds into clean business assets.</h1>
+            <p>I engineer automated Python pipelines to pull, validate, and structure dynamic web data—delivering error-free datasets and professional documentation ready for immediate operational use.</p>
+            <a href="#projects" class="btn-outline">View My Work</a>
+        </div>
+        <div class="hero-avatar">
+            <!-- ضع رابط صورتك الشخصية هنا بدلاً من الصورة الافتراضية -->
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Fatma Ahmed Tamer">
+        </div>
+    </div>
 
+    <!-- About Section -->
     <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="card">
-            <p><strong>Ever calculated how many productive hours your team burns manually copying data from websites and fixing messy spreadsheets?</strong></p>
-            <br>
-            <p>I am Fatma Ahmed, an engineering graduate specializing in Data Systems and Automation through the Digital Egypt Pioneers Initiative (DEPI). My engineering foundation drives me to approach data through structured architecture: where others see unorganized web pages, I see reliable pipelines.</p>
-            <br>
-            <p><strong>My Unique Selling Proposition (USP):</strong> I don't just extract raw data. I build end-to-end data cleaning pipelines with automated validation, deduplication, and direct SQL/Excel output—giving you clean, actionable datasets with zero manual rework required.</p>
+        <h2 class="section-header">About Me</h2>
+        <div style="max-width: 800px;">
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+                <strong>Ever calculated how many productive hours your team burns manually copying data from websites and formatting mixed spreadsheets?</strong>
+            </p>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">
+                I hold a specialized engineering foundation in Data Systems and AI through the Digital Egypt Pioneers Initiative (DEPI). I look at data through structural architecture: where others see unorganized web catalogs, I build automated pipelines that extract, cleanse, and structure every cell reliably.
+            </p>
+            <p style="color: var(--text-muted);">
+                <strong>Why work with me?</strong> I deliver zero-rework datasets. Every pipeline guarantees deduplication, format normalization, and strict schema validation directly into ready-to-use Excel or SQL databases.
+            </p>
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services">
-        <h2 class="section-title">Offered Services</h2>
+        <h2 class="section-header">Offered Services</h2>
         <div class="grid">
             <div class="card">
                 <h3>Automated Web Scraping</h3>
-                <p>Custom crawlers that extract product catalogs, competitor pricing, and market directories directly into clean Excel/CSV formats, handling dynamic pagination and JavaScript.</p>
+                <p>Custom crawlers built to extract product pricing, job postings, directory listings, or sports stats across dynamic, multi-page platforms directly into Excel/CSV.</p>
+                <span class="badge">Python</span><span class="badge">Selenium</span><span class="badge">BeautifulSoup</span>
             </div>
             <div class="card">
-                <h3>Data Cleansing & Structuring</h3>
-                <p>Transforming disorganized datasets into standardized schemas by stripping duplicates, fixing missing values, and formatting mixed records using Python.</p>
+                <h3>Automated Data Entry & Cleaning</h3>
+                <p>Replacing manual data typing by writing transformation scripts that clean mixed text, strip duplicate records, and standardize messy spreadsheets.</p>
+                <span class="badge">Pandas</span><span class="badge">Data Wrangling</span><span class="badge">Excel</span>
             </div>
             <div class="card">
-                <h3>Database Design & SQL Reporting</h3>
-                <p>Designing normalized SQL Server databases with primary/foreign key constraints and developing queries to deliver on-demand reporting.</p>
+                <h3>Database Schema & SQL Queries</h3>
+                <p>Designing relational SQL Server tables with strict data integrity rules, views, and custom query reporting tailored to operational decisions.</p>
+                <span class="badge">SQL Server</span><span class="badge">SSMS</span><span class="badge">DDL</span>
+            </div>
+            <div class="card">
+                <h3>LinkedIn & Technical CV Optimization</h3>
+                <p>Refining professional profiles and crafting ATS-compliant technical resumes structured to highlight engineering and data competencies effectively.</p>
+                <span class="badge">ATS Formatting</span><span class="badge">Career Strategy</span>
             </div>
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-header">Featured Work & Case Studies</h2>
+        <div class="grid">
+            <!-- Project 1: Wuzzuf -->
+            <div class="card">
+                <h3>Wuzzuf Dynamic Job Market Scraper</h3>
+                <p>Automated crawler parsing multi-page dynamic job listings, capturing titles, companies, locations, and experience requirements across industry sectors.</p>
+                <p><strong>Result:</strong> Extracted 1,000+ structured job records in minutes, eliminating manual search time by 85%.</p>
+                <div style="margin-bottom: 0.8rem;">
+                    <span class="badge">Selenium</span><span class="badge">Pandas</span><span class="badge">Excel Export</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank">View GitHub Code &rarr;</a>
+                    <a href="#" target="_blank">Download Sample Excel &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Project 2: Yallakora -->
+            <div class="card">
+                <h3>Yallakora Sports Performance Pipeline</h3>
+                <p>Real-time ETL scraper extracting match results, championship details, and team standings, standardizing Arabic text strings and date formats.</p>
+                <p><strong>Result:</strong> Converted live sports data feeds into 100% clean, standardized analytics spreadsheets.</p>
+                <div style="margin-bottom: 0.8rem;">
+                    <span class="badge">Requests</span><span class="badge">BeautifulSoup</span><span class="badge">Data Cleansing</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank">View GitHub Code &rarr;</a>
+                    <a href="#" target="_blank">View Cleaned Output &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Project 3: Relational DB -->
+            <div class="card">
+                <h3>Enterprise Relational Database Design</h3>
+                <p>Designed and deployed an inventory relational database schema enforcing foreign-key integrity constraints and sub-second query performance.</p>
+                <p><strong>Result:</strong> Guaranteed zero orphaned records and enabled instant multi-table reporting.</p>
+                <div style="margin-bottom: 0.8rem;">
+                    <span class="badge">SQL Server</span><span class="badge">SSMS</span><span class="badge">DDL</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank">View Database Scripts &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
     <section id="skills">
-        <h2 class="section-title">Technical Skills & What I Build With Them</h2>
+        <h2 class="section-header">Technical Toolkit</h2>
         <div class="grid">
             <div class="card">
                 <h3>Extraction & Automation</h3>
-                <p><strong>Python, BeautifulSoup, Selenium:</strong> Developing automated bots to handle dynamic pages, bypass pagination, and parse structured HTML elements reliably.</p>
+                <p><strong>Python, BeautifulSoup, Selenium:</strong> Automating browser actions, managing infinite scrolling, and extracting deeply nested elements.</p>
             </div>
             <div class="card">
-                <h3>Data Processing</h3>
-                <p><strong>Pandas & NumPy:</strong> Data wrangling, schema transformation, deduplication, and mathematical aggregations on large datasets.</p>
+                <h3>Data Processing & Cleaning</h3>
+                <p><strong>Pandas, NumPy, Advanced Excel:</strong> Eliminating corrupted entries, standardizing schema formats, and performing aggregations.</p>
             </div>
             <div class="card">
-                <h3>Storage & Querying</h3>
-                <p><strong>SQL (SSMS) & Advanced Excel:</strong> Writing relational DDL/DML queries, setting database integrity constraints, and generating automated spreadsheet reports.</p>
+                <h3>Storage & Management</h3>
+                <p><strong>Microsoft SQL Server (SSMS), Git/GitHub:</strong> Designing relational structures and maintaining version-controlled automation scripts.</p>
             </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Multi-Page Job Intelligence Scraper</h3>
-                <p>Automated crawler built to parse multi-page dynamic job listings, extracting structured columns across categories.</p>
-                <div style="margin: 1rem 0;">
-                    <span class="badge">Python</span><span class="badge">Selenium</span><span class="badge">BeautifulSoup</span><span class="badge">Pandas</span>
-                </div>
-                <p><strong>Result:</strong> Extracted 1,000+ validated records in minutes, reducing manual research time by over 85%.</p>
-            </div>
-            <div class="card">
-                <h3>Sports League Performance ETL</h3>
-                <p>Scheduled data extraction pipeline collecting live tournament stats and generating structured performance tables.</p>
-                <div style="margin: 1rem 0;">
-                    <span class="badge">Python</span><span class="badge">Requests</span><span class="badge">Pandas</span><span class="badge">Excel</span>
-                </div>
-                <p><strong>Result:</strong> Transformed disparate match records into 100% clean, analysis-ready datasets with zero missing values.</p>
-            </div>
-            <div class="card">
-                <h3>Relational Database Architecture</h3>
-                <p>Normalized relational schema design with integrity constraints, optimized indexing, and reporting queries.</p>
-                <div style="margin: 1rem 0;">
-                    <span class="badge">SQL Server</span><span class="badge">SSMS</span><span class="badge">DDL</span>
-                </div>
-                <p><strong>Result:</strong> Ensured zero orphaned records and achieved fast query responses across relational tables.</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- Contact Section -->
     <section id="contact">
-        <div class="cta-box">
-            <h2>Stop Wasting Hours on Manual Data Collection</h2>
-            <br>
-            <p>Send me your target website link or your messiest spreadsheet, and I will deliver a <strong>Free 50-Row Sample Dataset</strong> within 24 hours—fully cleaned, formatted, and structured.</p>
-            <br>
-            <p><strong>Email:</strong> your.email@example.com</p>
-            <p><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</p>
-            <p><strong>GitHub:</strong> github.com/yourusername</p>
-            <br>
-            <a href="mailto:your.email@example.com" class="btn">Get In Touch</a>
+        <div class="cta-container">
+            <h2>Let’s Automate Your Data Workflows</h2>
+            <p>Send me your target website or unorganized spreadsheet, and I will deliver a <strong>Free 50-Row Sample Dataset</strong> within 24 hours—completely formatted and cleaned to your requirements.</p>
+            <p style="font-weight: 600; color: var(--text-dark); margin-bottom: 1.5rem;">
+                Email: <a href="mailto:your.email@example.com" style="color: var(--accent); text-decoration: none;">your.email@example.com</a>
+            </p>
+            <a href="mailto:your.email@example.com" class="btn-outline">Claim Free Sample Data</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Fatma Ahmed Tamer. Built for client-focused performance.</p>
+        <p>&copy; 2026 Fatma Ahmed Tamer. All rights reserved.</p>
     </footer>
 
 </body>
